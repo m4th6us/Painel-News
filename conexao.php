@@ -8,4 +8,4 @@ $mysqli = new mysqli(hostname:$host, username:$usuario, password:$senha, databas
 
 if($mysqli -> error) {
     die('Falha na conexao: ' . $mysqli -> error);
-} 
+}

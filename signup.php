@@ -10,9 +10,6 @@ if(isset($_POST['email']) || isset($_POST['Password']) || isset($_POST['Name']) 
     else if(strlen($_POST['Password']) == 0){
         echo "<script>alert(\"Preencha sua senha\")</script>";
     } 
-    else if(strlen($_POST['Password']) > 0 || strlen($_POST['Password']) < 4){
-        echo "<script>alert(\"Crie uma senha com mais de 4 caracteres\")</script>";
-    } 
     else if(strlen($_POST['Name']) == 0){
         echo "<script>alert(\"Preencha seu nome\")</script>";
     }
@@ -26,6 +23,7 @@ if(isset($_POST['email']) || isset($_POST['Password']) || isset($_POST['Name']) 
         echo "<script>alert(\"Preencha seu Confirm_Password\")</script>";
     }
     else {
+        echo "<script>alert(\"Boa cria\")</script>";
         $email = $mysqli->real_escape_string($_POST['email']);
         $pass = $mysqli->real_escape_string($_POST['Password']);
         $name = $mysqli->real_escape_string($_POST['Name']);
