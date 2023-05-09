@@ -6,5 +6,5 @@ if (!isset($_SESSION)){
 
 session_destroy();
 
-header("Location: signup.php")
+header("Location: signin.php")
 ?>

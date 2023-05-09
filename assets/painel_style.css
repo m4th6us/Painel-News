@@ -15,30 +15,58 @@ nav {
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5); /* Define a sombra */
 }
 
-nav .sign-buttons{
+.nav-buttons{
     display: flex;
     gap: 1rem;
     width: auto;
     margin-right: 2%;
+    display: flex;
+    align-items: center;
+    gap: 5rem;
 }
 
-.sign-buttons button{
+.nav-buttons button{
     text-decoration: none;
     border: none;
     background-color: transparent;
+    cursor: pointer;
 }
 
-.sign-buttons a{
+.nav-buttons a {
     text-decoration: none;
     outline: none;
     color:  white;
+    font-size: larger;
 }
 
-.sign-buttons a:hover{
-    cursor: pointer;
+.nav-buttons a:hover{
     color: rgba(255, 255, 255, 0.671);
 }
 
+.sign-buttons{
+    display: flex;
+    gap: 3rem;
+}
+
+.sign-buttons span{
+    font-size: larger;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+
+.sign-buttons select{
+    background-color: transparent;
+    border: none;
+    color:  white;
+    font-size: larger;
+    font-family: 'Roboto', sans-serif;
+}
+
+.sign-buttons option{
+    color:  white;
+    font-size: larger;
+    font-family: 'Roboto', sans-serif;
+}
 
 .sun-button {
     width: 50px;
@@ -46,14 +74,14 @@ nav .sign-buttons{
     content: url("https://img.icons8.com/ios/50/null/sun--v1.png");
   }
   
-  .moon-button {
+.moon-button {
     width: 50px;
     height: 50px;
     content: url("https://img.icons8.com/ios-filled/50/null/bright-moon.png");
-  }
+}
   
 
-nav span{
+nav {
     font-family: 'Roboto', sans-serif;
     color: white;
 }

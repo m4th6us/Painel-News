@@ -22,4 +22,8 @@ function color() {
       console.log(news.className);
 
     }
-  }
+};
+
+function espace(){
+  alert("deseja sair ?");
+}

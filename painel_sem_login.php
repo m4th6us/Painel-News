@@ -1,9 +1,3 @@
-<?php
-
-include('protect.php');
-session_start(); 
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -26,13 +20,10 @@ session_start();
                     </button>
                 </div>
                 <div class="sign-buttons">
-                    <button onclick="escape()">
-                        <span onclick="escape()">
-                            <a onclick="escape()" href="logout.php"><?php echo strtoupper($_SESSION['Name']) ?></a>
-                        </span>
-                    </button>
+                    <button><span><a href="signup.php" target="_blank" rel="noopener noreferrer">CADASTRAR</a></span></button>
+                    <button><span><a href="signin.php" target="_blank" rel="noopener noreferrer">LOGIN</a></span></button>
                 </div>
-            </div>      
+            </div>        
     </nav>
     <main>
         <aside></aside>

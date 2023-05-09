@@ -21,20 +21,20 @@ if(isset($_POST['email']) || isset($_POST['Password']) || isset($_POST['Name']) 
     }
     else if(strlen($_POST['Confirm_Password']) == 0){
         echo "<script>alert(\"Preencha seu Confirm_Password\")</script>";
+    } 
+    else if ($_POST['Password'] != $_POST['Password']){
+        echo "<script>alert(\"As senhas estão diferentes\")</script>";
     }
     else {
-        echo "<script>alert(\"Boa cria\")</script>";
         $email = $mysqli->real_escape_string($_POST['email']);
         $pass = $mysqli->real_escape_string($_POST['Password']);
         $name = $mysqli->real_escape_string($_POST['Name']);
         $surname = $mysqli->real_escape_string($_POST['Surname']);
         $number = $mysqli->real_escape_string($_POST['Number']);
-        $confirm_password = $mysqli->real_escape_string($_POST['Confirm_Password']);
 
-        $sql_code = "INSERT INTO `user` (`Name`, `Surname`, `Mobile Number`, `Password`, `Confirm Password`, `id`, `email`) VALUES ('$name', '$surname', '$number', '$pass', '$confirm_password', NULL, '$email'); ";
+        $sql_code = "INSERT INTO `user` (`Name`, `Surname`, `Mobile Number`, `Password`, `id`, `email`) VALUES ('$name', '$surname', '$number', '$pass', NULL, '$email'); ";
 
         $sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL: " . $mysqli->error);
-
     }
 };
 ?>
@@ -68,9 +68,9 @@ if(isset($_POST['email']) || isset($_POST['Password']) || isset($_POST['Name']) 
                             <br>
                             <input type="text" name="email" id="" placeholder="Email Address">
                             <br>
-                            <input type="text" name="Password" id="" placeholder="Password">
+                            <input type="password" name="Password" id="" placeholder="Password">
                             <br>
-                            <input type="text" name="Confirm_Password" id="" placeholder="Confirm Password">
+                            <input type="password" name="Confirm_Password" id="" placeholder="Confirm Password">
                             <br>
                             <div class="link">
                                 <input type="checkbox" name="" id=""> <label> Confirm Password</label>

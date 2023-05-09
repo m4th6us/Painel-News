@@ -1,7 +1,7 @@
 <?php
 include('conexao.php');
 
-if(isset($_POST['email']) || isset($_POST['Password']) || isset($_POST['Confirm_Password'])) {
+if(isset($_POST['email']) || isset($_POST['Password'])) {
 
     if(strlen($_POST['email']) == 0){
         echo "<script>alert(\"Preencha seu email\")</script>";
@@ -9,18 +9,16 @@ if(isset($_POST['email']) || isset($_POST['Password']) || isset($_POST['Confirm_
     else if(strlen($_POST['Password']) == 0){
         echo "<script>alert(\"Preencha sua senha\")</script>";
     } 
-    else if(strlen($_POST['Confirm_Password']) == 0){
-        echo "<script>alert(\"Confime sua senha\")</script>";
-    } 
     else {
         $email = $mysqli->real_escape_string($_POST['email']);
         $pass = $mysqli->real_escape_string($_POST['Password']);
 
-        $sql_code = "SELECT * FROM user WHERE email = '$email'";
+        $sql_code = "SELECT * FROM user WHERE email = '$email' and Password = '$pass'";
 
         $sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL: " . $mysqli->error);
 
         $quantidade = $sql_query->num_rows;
+        echo $quantidade;
 
         if ($quantidade == 1){
             $usuario = $sql_query->fetch_assoc();
@@ -33,7 +31,7 @@ if(isset($_POST['email']) || isset($_POST['Password']) || isset($_POST['Confirm_
             header("Location: painel.php");
 
         } else{
-            echo "Falha a logar";
+            echo "<script>alert('Usuário ou senha incorretas')</script>";
         }
     }
 };
@@ -60,10 +58,7 @@ if(isset($_POST['email']) || isset($_POST['Password']) || isset($_POST['Confirm_
                         <div class="components">
                             <input type="text" name="email" id="" placeholder="Email Address">
                             <br>
-                            <input type="text" name="Password" id="" placeholder="Password">
-                            <br>
-                            <input type="text" name="Confirm_Password" id="" placeholder="Confirm Password">
-                            <br>
+                            <input type="password" name="Password" id="" placeholder="Password">
                             <br>
                             <div class="btn-continue">
                                 <button>Continue</button>
