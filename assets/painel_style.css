@@ -10,7 +10,7 @@ nav {
     background-color: #242424;
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: center;
     padding: 2% 2%;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5); /* Define a sombra */
 }
@@ -39,13 +39,26 @@ nav .sign-buttons{
     color: rgba(255, 255, 255, 0.671);
 }
 
+
+.sun-button {
+    width: 50px;
+    height: 50px;
+    content: url("https://img.icons8.com/ios/50/null/sun--v1.png");
+  }
+  
+  .moon-button {
+    width: 50px;
+    height: 50px;
+    content: url("https://img.icons8.com/ios-filled/50/null/bright-moon.png");
+  }
+  
+
 nav span{
     font-family: 'Roboto', sans-serif;
     color: white;
 }
 
 main{
-    margin-top: 2rem;
     display: flex;
     flex-direction: row;
 }
@@ -61,11 +74,25 @@ main a:hover{
 }
 
 main aside{
-    width: 12%;
+    width: 20%;
 }
 
-.news{
+.news ol{
+    margin-top: 2rem;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 2rem;
 }
+  
+.news-black{
+    color: black;
+}
+  
+.news-white a{
+    color: white;
+}
+
+.news-white li{
+    color: white;
+}
+  
