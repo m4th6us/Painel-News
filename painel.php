@@ -12,9 +12,11 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/painel_style.css">
     <script src="scripts/script.js"></script>
+    <script src="scripts/news.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Painel News</title>
 </head>
-<body id="main">
+<body id="main" onload="news()">
     <nav>
             <span>Painel News</span>
             <div class="nav-buttons">
@@ -37,17 +39,7 @@ session_start();
     <main>
         <aside></aside>
         <div id="news" class="news news-black">
-            <ol>
-                <li><a href="#" target="_blank" rel="noopener noreferrer">O desafio de manter contato com a equipe e se sentir parte da empresa trabalhando em casa!</a></li>
-                <li><a href="#" target="_blank" rel="noopener noreferrer">O desafio de manter contato com a equipe e se sentir parte da empresa trabalhando em casa!</a></li>
-                <li><a href="#" target="_blank" rel="noopener noreferrer">O desafio de manter contato com a equipe e se sentir parte da empresa trabalhando em casa!</a></li>
-                <li><a href="#" target="_blank" rel="noopener noreferrer">O desafio de manter contato com a equipe e se sentir parte da empresa trabalhando em casa!</a></li>
-                <li><a href="#" target="_blank" rel="noopener noreferrer">O desafio de manter contato com a equipe e se sentir parte da empresa trabalhando em casa!</a></li>
-                <li><a href="#" target="_blank" rel="noopener noreferrer">O desafio de manter contato com a equipe e se sentir parte da empresa trabalhando em casa!</a></li>
-                <li><a href="#" target="_blank" rel="noopener noreferrer">O desafio de manter contato com a equipe e se sentir parte da empresa trabalhando em casa!</a></li>
-                <li><a href="#" target="_blank" rel="noopener noreferrer">O desafio de manter contato com a equipe e se sentir parte da empresa trabalhando em casa!</a></li>
-                <li><a href="#" target="_blank" rel="noopener noreferrer">O desafio de manter contato com a equipe e se sentir parte da empresa trabalhando em casa!</a></li>
-                <li><a href="#" target="_blank" rel="noopener noreferrer">O desafio de manter contato com a equipe e se sentir parte da empresa trabalhando em casa!</a></li>
+            <ol id="dynamicList">
             </ol>
         </div>
     </main>
