@@ -4,7 +4,7 @@ if (!isset($_SESSION)){
     session_start();
 }
 
-if (!isset($_SESSION['id'])){
+if (!isset($_SESSION['name'])){
     die("Você não pode acessar essa página porque não está logado. <p><a href=\"signin.php\">Logar</a></p>");
 }
 ?>

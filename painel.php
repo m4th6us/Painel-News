@@ -28,7 +28,7 @@ session_start();
                 <div class="sign-buttons">
                     <button onclick="escape()">
                         <span onclick="escape()">
-                            <a onclick="escape()" href="logout.php"><?php echo strtoupper($_SESSION['Name']) ?></a>
+                            <a onclick="escape()" href="logout.php"><?php echo strtoupper($_SESSION['name']) ?></a>
                         </span>
                     </button>
                 </div>

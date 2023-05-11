@@ -1,17 +1,17 @@
 <?php
 include('conexao.php');
 
-if(isset($_POST['email']) || isset($_POST['Password'])) {
+if(isset($_POST['email']) || isset($_POST['pass'])) {
 
     if(strlen($_POST['email']) == 0){
         echo "<script>alert(\"Preencha seu email\")</script>";
     } 
-    else if(strlen($_POST['Password']) == 0){
+    else if(strlen($_POST['pass']) == 0){
         echo "<script>alert(\"Preencha sua senha\")</script>";
     } 
     else {
-        $email = $mysqli->real_escape_string($_POST['email']);
-        $pass = $mysqli->real_escape_string($_POST['Password']);
+        $email = md5($mysqli->real_escape_string($_POST['email']));
+        $pass = md5($mysqli->real_escape_string($_POST['pass']));
 
         $sql_code = "SELECT * FROM user WHERE email = '$email' and Password = '$pass'";
 
@@ -25,8 +25,7 @@ if(isset($_POST['email']) || isset($_POST['Password'])) {
 
             session_start();
 
-            $_SESSION['id'] = $usuario['id'];
-            $_SESSION['Name'] = $usuario['Name'];
+            $_SESSION['name'] = $usuario['name'];
 
             header("Location: painel.php");
 
@@ -58,7 +57,7 @@ if(isset($_POST['email']) || isset($_POST['Password'])) {
                         <div class="components">
                             <input type="text" name="email" id="" placeholder="Email Address">
                             <br>
-                            <input type="password" name="Password" id="" placeholder="Password">
+                            <input type="password" name="pass" id="" placeholder="Password">
                             <br>
                             <div class="btn-continue">
                                 <button>Continue</button>
